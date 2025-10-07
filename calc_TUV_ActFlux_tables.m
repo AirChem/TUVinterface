@@ -20,7 +20,7 @@ OutputPath = fullfile(BaseDir,'usrout.txt'); %location for TUV output file
 %%%% DEFINE RANGE %%%%%
 
 % For hybrid lookup table
-ALT = 0:1:15;
+ALT = 0:1:22;
 SZA = 0:5:90;
 O3col = 100:50:600;
 albedo = 0:0.2:1;
@@ -42,7 +42,7 @@ for i=1:Lalt
             fprintf('TUV run %d of %d\n',k+(j-1)*Lalb+(i-1)*Lo3c*Lalb,Lalt*Lo3c*Lalb)
         
             % build input file
-            TUV_WriteInputFile_ActinicFlux4D(InputPath,ALT(i),O3col(j),albedo(k),SZA);
+            TUV_WriteInputFile_ActinicFlux(InputPath,ALT(i),O3col(j),albedo(k),SZA);
     
             % call TUV
             disp('CALLING TUV...')
